@@ -9,6 +9,6 @@ import org.springframework.data.repository.query.Param;
  */
 public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
 
-    Employee findByName(String name);
+    Employee findByName(@Param("name") String name);
 
 }
