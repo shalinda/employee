@@ -22,7 +22,7 @@ public class KeyValue implements Serializable{
     private String value;
 
     @Column(length = 10)
-    private String type;
+    private String keyType;
 
     protected KeyValue() {
     }
@@ -43,12 +43,12 @@ public class KeyValue implements Serializable{
         this.value = value;
     }
 
-    public String getType() {
-        return type;
+    public String getKeyType() {
+        return keyType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setKeyType(String type) {
+        this.keyType = keyType;
     }
 
     @Override
@@ -60,14 +60,14 @@ public class KeyValue implements Serializable{
 
         if (key != null ? !key.equals(keyValue.key) : keyValue.key != null) return false;
         if (value != null ? !value.equals(keyValue.value) : keyValue.value != null) return false;
-        return type != null ? type.equals(keyValue.type) : keyValue.type == null;
+        return keyType != null ? keyType.equals(keyValue.keyType) : keyValue.keyType == null;
     }
 
     @Override
     public int hashCode() {
         int result = key != null ? key.hashCode() : 0;
         result = 31 * result + (value != null ? value.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (keyType != null ? keyType.hashCode() : 0);
         return result;
     }
 
@@ -76,7 +76,7 @@ public class KeyValue implements Serializable{
         return "KeyValue{" +
                 "key='" + key + '\'' +
                 ", value='" + value + '\'' +
-                ", type='" + type + '\'' +
+                ", type='" + keyType + '\'' +
                 '}';
     }
 }
