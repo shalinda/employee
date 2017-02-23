@@ -1,29 +1,30 @@
 package com.ge.predix.emp.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by shalindaranasinghe on 2/21/17.
  */
+@JsonInclude(JsonInclude.Include.ALWAYS)
 @Entity
 public class Employee implements Serializable{
 
     @Id
-    @GeneratedValue
-    public Integer id;
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer id;
 
     @Column(length = 2000)
-    public String name;
+    private String name;
 
     @Column(length = 2)
-    public String empType;
+    private String empType;
 
     @Column(length = 2000)
-    public String address;
+    private String address;
 
     public Employee(String name, String empType, String address) {
         this.name = name;
