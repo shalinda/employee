@@ -10,5 +10,5 @@ install postgreSQL 9
 
 update src/main/resources/application.properties with db info
 
-mvn install
+mvn install<br><br>
 java  -Dserver.port=9090 -Dserver.contextPath=/api -jar target/emp-0.0.1-SNAPSHOT.jar

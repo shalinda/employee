@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface CarhireEventRepository extends CrudRepository<CarhireEvent, Integer> {
 
-    List<CarhireEvent> findByEquipInitial(@Param("equipInitial") String equipInitial);
+    List<CarhireEvent> findByEquipInitialAndEquipNum(@Param("equipInitial") String equipInitial, @Param("equipNum") Integer equipNum);
 }
